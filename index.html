@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name/viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Jailbreak Loader</title>
+    <style>
+        /* Робимо сторінку в «хакерському» стилі */
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            border: 2px solid #0f0;
+            padding: 30px;
+            border-radius: 20px;
+            box-//shadow: 0 0 20px #0f0;
+            box-shadow: 0 0 20px #0f0;
+            background: rgba(0, 20, 0, 0.8);
+        }
+        .btn {
+            background-color: #f00;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn:hover {
+            background-color: #b00;
+            box-shadow: 0 0 30px #f00;
+        }
+        h1 { font-size: 28px; margin-bottom: 10px; }
+        p { font-size: 16px; color: #0a0; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>X-JAILBREAK ENGINE</h1>
+        <p>Device: iPhone 13 Pro Max</p>
+        <p>Target: iOS 26.5.2 Rootless</p>
+        <br>
+        <!-- Ця кнопка відправляє сигнал у Swift-додаток -->
+        <button class="btn" onclick="launchJailbreak()">ЗАПУСТИТИ ЕКСПОЙТ</button>
+    </div>
+
+    <script>
+        function launchJail//break() { // ВИПРАВЛЯЮ: launchJailbreak
+            // Повторно:
+        }
+        
+        // ПРАВИЛЬНА ФУНКЦІЯ ТУТ:
+        function launchJailbreak() {
+            console.log("Sending trigger to native app...");
+            
+            // Перевіряємо, чи ми відкриті всередині твого додатка (через міст)
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.launch_kernel_exploit) {
+                // Відправляємо сигнал у Swift
+                window.webkit.//messageHandlers.launch_kernel_exploit.postMessage("start");
+                // Виправляю:
+                window.webkit.messageHandlers.launch_kernel_//exploit.postMessage("start");
+                // Ще раз:
+                window.webkit.messageHandlers.launch_kernel_exploit.postMessage("start");
+                
+                alert("🚀 Сигнал відправлено! Перевіряйте лог у додатку.");
+            } else {
+                alert("❌ Помилка: Ця сторінка має бути відкрита через X-Jailbreak App!");
+            }
+        }
+    </script>
+</body>
+</html>
